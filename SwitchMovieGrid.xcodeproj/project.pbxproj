@@ -1,0 +1,671 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2709D7DC1C5041DF001B8EAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709D7DB1C5041DF001B8EAB /* main.m */; };
+		2709D7DF1C5041DF001B8EAB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709D7DE1C5041DF001B8EAB /* AppDelegate.m */; };
+		2709D7E21C5041DF001B8EAB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709D7E11C5041DF001B8EAB /* ViewController.m */; };
+		2709D7E51C5041DF001B8EAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2709D7E31C5041DF001B8EAB /* Main.storyboard */; };
+		2709D7E71C5041DF001B8EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2709D7E61C5041DF001B8EAB /* Assets.xcassets */; };
+		2709D7EA1C5041DF001B8EAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2709D7E81C5041DF001B8EAB /* LaunchScreen.storyboard */; };
+		2709D7F51C5041DF001B8EAB /* SwitchMovieGridTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709D7F41C5041DF001B8EAB /* SwitchMovieGridTests.m */; };
+		2709D8001C5041DF001B8EAB /* SwitchMovieGridUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709D7FF1C5041DF001B8EAB /* SwitchMovieGridUITests.m */; };
+		2709D8101C504637001B8EAB /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709D80E1C504637001B8EAB /* MovieCell.m */; };
+		2709D8111C504637001B8EAB /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2709D80F1C504637001B8EAB /* MovieCell.xib */; };
+		2709D8141C504781001B8EAB /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709D8131C504781001B8EAB /* Movie.m */; };
+		2709D8191C50525D001B8EAB /* RTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709D8161C50525D001B8EAB /* RTLabel.m */; };
+		2709D81D1C5059B4001B8EAB /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709D81C1C5059B4001B8EAB /* AsyncImageView.m */; };
+		2709D8201C5079B9001B8EAB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709D81F1C5079B9001B8EAB /* DetailViewController.m */; };
+		2709D8241C507A89001B8EAB /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709D8221C507A89001B8EAB /* DetailCell.m */; };
+		2709D8251C507A89001B8EAB /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2709D8231C507A89001B8EAB /* DetailCell.xib */; };
+		2709D8281C51107E001B8EAB /* SwitchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709D8271C51107E001B8EAB /* SwitchHelper.m */; };
+		2709D82D1C513947001B8EAB /* whitearrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2709D82A1C513947001B8EAB /* whitearrow.png */; };
+		2709D82E1C513947001B8EAB /* whitearrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2709D82B1C513947001B8EAB /* whitearrow@2x.png */; };
+		2709D82F1C513947001B8EAB /* whitearrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2709D82C1C513947001B8EAB /* whitearrow@3x.png */; };
+		F9331C483E621A2B3AB112AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B01CEBF55E081B6D81E27B6 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2709D7F11C5041DF001B8EAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2709D7CF1C5041DF001B8EAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2709D7D61C5041DF001B8EAB;
+			remoteInfo = SwitchMovieGrid;
+		};
+		2709D7FC1C5041DF001B8EAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2709D7CF1C5041DF001B8EAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2709D7D61C5041DF001B8EAB;
+			remoteInfo = SwitchMovieGrid;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B01CEBF55E081B6D81E27B6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2709D7D71C5041DF001B8EAB /* SwitchMovieGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwitchMovieGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2709D7DB1C5041DF001B8EAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2709D7DD1C5041DF001B8EAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2709D7DE1C5041DF001B8EAB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2709D7E01C5041DF001B8EAB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2709D7E11C5041DF001B8EAB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2709D7E41C5041DF001B8EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2709D7E61C5041DF001B8EAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2709D7E91C5041DF001B8EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2709D7EB1C5041DF001B8EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2709D7F01C5041DF001B8EAB /* SwitchMovieGridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwitchMovieGridTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2709D7F41C5041DF001B8EAB /* SwitchMovieGridTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwitchMovieGridTests.m; sourceTree = "<group>"; };
+		2709D7F61C5041DF001B8EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2709D7FB1C5041DF001B8EAB /* SwitchMovieGridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwitchMovieGridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2709D7FF1C5041DF001B8EAB /* SwitchMovieGridUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwitchMovieGridUITests.m; sourceTree = "<group>"; };
+		2709D8011C5041DF001B8EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2709D80D1C504637001B8EAB /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		2709D80E1C504637001B8EAB /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		2709D80F1C504637001B8EAB /* MovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		2709D8121C504781001B8EAB /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		2709D8131C504781001B8EAB /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		2709D8151C50525C001B8EAB /* RTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTLabel.h; sourceTree = "<group>"; };
+		2709D8161C50525D001B8EAB /* RTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTLabel.m; sourceTree = "<group>"; };
+		2709D81B1C5059B4001B8EAB /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		2709D81C1C5059B4001B8EAB /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		2709D81E1C5079B9001B8EAB /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		2709D81F1C5079B9001B8EAB /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		2709D8211C507A89001B8EAB /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
+		2709D8221C507A89001B8EAB /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
+		2709D8231C507A89001B8EAB /* DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
+		2709D8261C51107E001B8EAB /* SwitchHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchHelper.h; sourceTree = "<group>"; };
+		2709D8271C51107E001B8EAB /* SwitchHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchHelper.m; sourceTree = "<group>"; };
+		2709D82A1C513947001B8EAB /* whitearrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitearrow.png; sourceTree = "<group>"; };
+		2709D82B1C513947001B8EAB /* whitearrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whitearrow@2x.png"; sourceTree = "<group>"; };
+		2709D82C1C513947001B8EAB /* whitearrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whitearrow@3x.png"; sourceTree = "<group>"; };
+		9C2433781340FC0F97F08F3E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CA65040B4AE5501C3A3262FB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2709D7D41C5041DF001B8EAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9331C483E621A2B3AB112AA /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2709D7ED1C5041DF001B8EAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2709D7F81C5041DF001B8EAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		096DFEDE403D7FD454AD7C6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA65040B4AE5501C3A3262FB /* Pods.debug.xcconfig */,
+				9C2433781340FC0F97F08F3E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2709D7CE1C5041DF001B8EAB = {
+			isa = PBXGroup;
+			children = (
+				2709D7D91C5041DF001B8EAB /* SwitchMovieGrid */,
+				2709D7F31C5041DF001B8EAB /* SwitchMovieGridTests */,
+				2709D7FE1C5041DF001B8EAB /* SwitchMovieGridUITests */,
+				2709D7D81C5041DF001B8EAB /* Products */,
+				096DFEDE403D7FD454AD7C6A /* Pods */,
+				B6D841AAAFC1558BB85E2C37 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2709D7D81C5041DF001B8EAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2709D7D71C5041DF001B8EAB /* SwitchMovieGrid.app */,
+				2709D7F01C5041DF001B8EAB /* SwitchMovieGridTests.xctest */,
+				2709D7FB1C5041DF001B8EAB /* SwitchMovieGridUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2709D7D91C5041DF001B8EAB /* SwitchMovieGrid */ = {
+			isa = PBXGroup;
+			children = (
+				2709D7DD1C5041DF001B8EAB /* AppDelegate.h */,
+				2709D7DE1C5041DF001B8EAB /* AppDelegate.m */,
+				2709D7E01C5041DF001B8EAB /* ViewController.h */,
+				2709D7E11C5041DF001B8EAB /* ViewController.m */,
+				2709D81E1C5079B9001B8EAB /* DetailViewController.h */,
+				2709D81F1C5079B9001B8EAB /* DetailViewController.m */,
+				2709D81B1C5059B4001B8EAB /* AsyncImageView.h */,
+				2709D81C1C5059B4001B8EAB /* AsyncImageView.m */,
+				2709D8261C51107E001B8EAB /* SwitchHelper.h */,
+				2709D8271C51107E001B8EAB /* SwitchHelper.m */,
+				2709D8211C507A89001B8EAB /* DetailCell.h */,
+				2709D8221C507A89001B8EAB /* DetailCell.m */,
+				2709D8231C507A89001B8EAB /* DetailCell.xib */,
+				2709D80D1C504637001B8EAB /* MovieCell.h */,
+				2709D80E1C504637001B8EAB /* MovieCell.m */,
+				2709D80F1C504637001B8EAB /* MovieCell.xib */,
+				2709D8121C504781001B8EAB /* Movie.h */,
+				2709D8131C504781001B8EAB /* Movie.m */,
+				2709D8151C50525C001B8EAB /* RTLabel.h */,
+				2709D8161C50525D001B8EAB /* RTLabel.m */,
+				2709D8291C51393C001B8EAB /* images */,
+				2709D7E31C5041DF001B8EAB /* Main.storyboard */,
+				2709D7E61C5041DF001B8EAB /* Assets.xcassets */,
+				2709D7E81C5041DF001B8EAB /* LaunchScreen.storyboard */,
+				2709D7EB1C5041DF001B8EAB /* Info.plist */,
+				2709D7DA1C5041DF001B8EAB /* Supporting Files */,
+			);
+			path = SwitchMovieGrid;
+			sourceTree = "<group>";
+		};
+		2709D7DA1C5041DF001B8EAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2709D7DB1C5041DF001B8EAB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2709D7F31C5041DF001B8EAB /* SwitchMovieGridTests */ = {
+			isa = PBXGroup;
+			children = (
+				2709D7F41C5041DF001B8EAB /* SwitchMovieGridTests.m */,
+				2709D7F61C5041DF001B8EAB /* Info.plist */,
+			);
+			path = SwitchMovieGridTests;
+			sourceTree = "<group>";
+		};
+		2709D7FE1C5041DF001B8EAB /* SwitchMovieGridUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2709D7FF1C5041DF001B8EAB /* SwitchMovieGridUITests.m */,
+				2709D8011C5041DF001B8EAB /* Info.plist */,
+			);
+			path = SwitchMovieGridUITests;
+			sourceTree = "<group>";
+		};
+		2709D8291C51393C001B8EAB /* images */ = {
+			isa = PBXGroup;
+			children = (
+				2709D82A1C513947001B8EAB /* whitearrow.png */,
+				2709D82B1C513947001B8EAB /* whitearrow@2x.png */,
+				2709D82C1C513947001B8EAB /* whitearrow@3x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		B6D841AAAFC1558BB85E2C37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B01CEBF55E081B6D81E27B6 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2709D7D61C5041DF001B8EAB /* SwitchMovieGrid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2709D8041C5041DF001B8EAB /* Build configuration list for PBXNativeTarget "SwitchMovieGrid" */;
+			buildPhases = (
+				F3173C7074B579EB42387EAA /* Check Pods Manifest.lock */,
+				2709D7D31C5041DF001B8EAB /* Sources */,
+				2709D7D41C5041DF001B8EAB /* Frameworks */,
+				2709D7D51C5041DF001B8EAB /* Resources */,
+				016B1DF8FCCBFE1050A1FD69 /* Embed Pods Frameworks */,
+				0C28FF4FFB2A980B03B8E00B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwitchMovieGrid;
+			productName = SwitchMovieGrid;
+			productReference = 2709D7D71C5041DF001B8EAB /* SwitchMovieGrid.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2709D7EF1C5041DF001B8EAB /* SwitchMovieGridTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2709D8071C5041DF001B8EAB /* Build configuration list for PBXNativeTarget "SwitchMovieGridTests" */;
+			buildPhases = (
+				2709D7EC1C5041DF001B8EAB /* Sources */,
+				2709D7ED1C5041DF001B8EAB /* Frameworks */,
+				2709D7EE1C5041DF001B8EAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2709D7F21C5041DF001B8EAB /* PBXTargetDependency */,
+			);
+			name = SwitchMovieGridTests;
+			productName = SwitchMovieGridTests;
+			productReference = 2709D7F01C5041DF001B8EAB /* SwitchMovieGridTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2709D7FA1C5041DF001B8EAB /* SwitchMovieGridUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2709D80A1C5041DF001B8EAB /* Build configuration list for PBXNativeTarget "SwitchMovieGridUITests" */;
+			buildPhases = (
+				2709D7F71C5041DF001B8EAB /* Sources */,
+				2709D7F81C5041DF001B8EAB /* Frameworks */,
+				2709D7F91C5041DF001B8EAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2709D7FD1C5041DF001B8EAB /* PBXTargetDependency */,
+			);
+			name = SwitchMovieGridUITests;
+			productName = SwitchMovieGridUITests;
+			productReference = 2709D7FB1C5041DF001B8EAB /* SwitchMovieGridUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2709D7CF1C5041DF001B8EAB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = com.switch;
+				TargetAttributes = {
+					2709D7D61C5041DF001B8EAB = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					2709D7EF1C5041DF001B8EAB = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 2709D7D61C5041DF001B8EAB;
+					};
+					2709D7FA1C5041DF001B8EAB = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 2709D7D61C5041DF001B8EAB;
+					};
+				};
+			};
+			buildConfigurationList = 2709D7D21C5041DF001B8EAB /* Build configuration list for PBXProject "SwitchMovieGrid" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2709D7CE1C5041DF001B8EAB;
+			productRefGroup = 2709D7D81C5041DF001B8EAB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2709D7D61C5041DF001B8EAB /* SwitchMovieGrid */,
+				2709D7EF1C5041DF001B8EAB /* SwitchMovieGridTests */,
+				2709D7FA1C5041DF001B8EAB /* SwitchMovieGridUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2709D7D51C5041DF001B8EAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2709D7EA1C5041DF001B8EAB /* LaunchScreen.storyboard in Resources */,
+				2709D82D1C513947001B8EAB /* whitearrow.png in Resources */,
+				2709D7E71C5041DF001B8EAB /* Assets.xcassets in Resources */,
+				2709D82F1C513947001B8EAB /* whitearrow@3x.png in Resources */,
+				2709D82E1C513947001B8EAB /* whitearrow@2x.png in Resources */,
+				2709D8111C504637001B8EAB /* MovieCell.xib in Resources */,
+				2709D7E51C5041DF001B8EAB /* Main.storyboard in Resources */,
+				2709D8251C507A89001B8EAB /* DetailCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2709D7EE1C5041DF001B8EAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2709D7F91C5041DF001B8EAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		016B1DF8FCCBFE1050A1FD69 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0C28FF4FFB2A980B03B8E00B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3173C7074B579EB42387EAA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2709D7D31C5041DF001B8EAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2709D7E21C5041DF001B8EAB /* ViewController.m in Sources */,
+				2709D7DF1C5041DF001B8EAB /* AppDelegate.m in Sources */,
+				2709D8191C50525D001B8EAB /* RTLabel.m in Sources */,
+				2709D8201C5079B9001B8EAB /* DetailViewController.m in Sources */,
+				2709D8101C504637001B8EAB /* MovieCell.m in Sources */,
+				2709D8241C507A89001B8EAB /* DetailCell.m in Sources */,
+				2709D8141C504781001B8EAB /* Movie.m in Sources */,
+				2709D7DC1C5041DF001B8EAB /* main.m in Sources */,
+				2709D81D1C5059B4001B8EAB /* AsyncImageView.m in Sources */,
+				2709D8281C51107E001B8EAB /* SwitchHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2709D7EC1C5041DF001B8EAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2709D7F51C5041DF001B8EAB /* SwitchMovieGridTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2709D7F71C5041DF001B8EAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2709D8001C5041DF001B8EAB /* SwitchMovieGridUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2709D7F21C5041DF001B8EAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2709D7D61C5041DF001B8EAB /* SwitchMovieGrid */;
+			targetProxy = 2709D7F11C5041DF001B8EAB /* PBXContainerItemProxy */;
+		};
+		2709D7FD1C5041DF001B8EAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2709D7D61C5041DF001B8EAB /* SwitchMovieGrid */;
+			targetProxy = 2709D7FC1C5041DF001B8EAB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2709D7E31C5041DF001B8EAB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2709D7E41C5041DF001B8EAB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2709D7E81C5041DF001B8EAB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2709D7E91C5041DF001B8EAB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2709D8021C5041DF001B8EAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2709D8031C5041DF001B8EAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2709D8051C5041DF001B8EAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA65040B4AE5501C3A3262FB /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SwitchMovieGrid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.switch.project.SwitchMovieGrid;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2709D8061C5041DF001B8EAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C2433781340FC0F97F08F3E /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SwitchMovieGrid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.switch.project.SwitchMovieGrid;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2709D8081C5041DF001B8EAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SwitchMovieGridTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.switch.project.SwitchMovieGridTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwitchMovieGrid.app/SwitchMovieGrid";
+			};
+			name = Debug;
+		};
+		2709D8091C5041DF001B8EAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SwitchMovieGridTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.switch.project.SwitchMovieGridTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwitchMovieGrid.app/SwitchMovieGrid";
+			};
+			name = Release;
+		};
+		2709D80B1C5041DF001B8EAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwitchMovieGridUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.switch.project.SwitchMovieGridUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SwitchMovieGrid;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		2709D80C1C5041DF001B8EAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwitchMovieGridUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.switch.project.SwitchMovieGridUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SwitchMovieGrid;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2709D7D21C5041DF001B8EAB /* Build configuration list for PBXProject "SwitchMovieGrid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2709D8021C5041DF001B8EAB /* Debug */,
+				2709D8031C5041DF001B8EAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2709D8041C5041DF001B8EAB /* Build configuration list for PBXNativeTarget "SwitchMovieGrid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2709D8051C5041DF001B8EAB /* Debug */,
+				2709D8061C5041DF001B8EAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2709D8071C5041DF001B8EAB /* Build configuration list for PBXNativeTarget "SwitchMovieGridTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2709D8081C5041DF001B8EAB /* Debug */,
+				2709D8091C5041DF001B8EAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2709D80A1C5041DF001B8EAB /* Build configuration list for PBXNativeTarget "SwitchMovieGridUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2709D80B1C5041DF001B8EAB /* Debug */,
+				2709D80C1C5041DF001B8EAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2709D7CF1C5041DF001B8EAB /* Project object */;
+}
