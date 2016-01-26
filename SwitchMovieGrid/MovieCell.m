@@ -21,13 +21,11 @@
     _rightView.clipsToBounds=YES;
     _leftView.backgroundColor= [UIColor lightGrayColor];
     _rightView.backgroundColor= [UIColor lightGrayColor];
- 
+    _leftView.layer.cornerRadius= 5;
+    _rightView.layer.cornerRadius= 5;
     
     _movieImage = [[AsyncImageView alloc] initWithFrame:CGRectMake(0, 0, _leftView.frame.size.width,_leftView.frame.size.height)];
     _movieImage1 = [[AsyncImageView alloc] initWithFrame:CGRectMake(0, 0, _rightView.frame.size.width,_rightView.frame.size.height)];
-    
-    _leftView.layer.cornerRadius= 5;
-    _rightView.layer.cornerRadius= 5;
     _movieImage.userInteractionEnabled = NO;
     _movieImage.exclusiveTouch = NO;
     _movieImage1.userInteractionEnabled = NO;
@@ -38,7 +36,6 @@
     [self.contentView addSubview:_leftView];
     [self.contentView addSubview:_rightView];
     
-    self.selectionStyle=UITableViewCellSelectionStyleNone;
     
     // Initialization code
 }
@@ -47,17 +44,13 @@
 {
    
     [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:_movieImage];
-    
-    
-    NSString *moviePath=_movie.poster_path;
-    _movieImage.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://image.tmdb.org/t/p/w342",moviePath]];
+    _movieImage.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,_movie.poster_path]];
     _movieImage.contentMode = UIViewContentModeScaleAspectFill;
-    NSString *moviePath1=_movie1.poster_path;
- 
-    
+  
     [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:_movieImage1];
-    _movieImage1.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://image.tmdb.org/t/p/w342",moviePath1]];
+    _movieImage1.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,_movie1.poster_path]];
     _movieImage1.contentMode = UIViewContentModeScaleAspectFill;
+    
     _leftView.tag=_movie.movie_id.intValue;
     _rightView.tag=_movie1.movie_id.intValue;
     

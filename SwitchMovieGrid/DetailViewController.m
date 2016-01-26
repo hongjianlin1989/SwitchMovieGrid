@@ -130,10 +130,6 @@
     return cell;
 }
 
-- (IBAction)BackButtonClick:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -144,12 +140,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     
-    NSNumber *height=contentHight;
-    return height.integerValue;
+    return contentHight.integerValue;
 }
 
 
-
+- (IBAction)BackButtonClick:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 /*
 #pragma mark - Navigation

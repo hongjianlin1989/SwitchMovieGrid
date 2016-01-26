@@ -18,23 +18,22 @@
     _leftView.frame= [[SwitchHelper sharedInstance] resizeFrameWithFrame:_leftView];
     _leftView.backgroundColor= [UIColor lightGrayColor];
     _leftView.clipsToBounds=YES;
-
-    _movieImage = [[AsyncImageView alloc] initWithFrame:CGRectMake(0, 0, _leftView.frame.size.width,_leftView.frame.size.height)];
     _leftView.layer.cornerRadius= 5;
+    
+    _movieImage = [[AsyncImageView alloc] initWithFrame:CGRectMake(0, 0, _leftView.frame.size.width,_leftView.frame.size.height)];
     _movieImage.userInteractionEnabled = NO;
     _movieImage.exclusiveTouch = NO;
     
     [self.leftView addSubview:_movieImage];
-    self.selectionStyle=UITableViewCellSelectionStyleNone;
     
-    // Initialization code
+    
 }
 
 - (void) builtCell
 {
     
     NSString *moviePath=_movie.poster_path;
-    _movieImage.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://image.tmdb.org/t/p/w342",moviePath]];
+    _movieImage.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,moviePath]];
     _movieImage.contentMode = UIViewContentModeScaleAspectFill;
     
     _ScoreLabel=[[RTLabel alloc] initWithFrame:CGRectMake(180*SCREEN_WIDTH_RATIO, 20*SCREEN_WIDTH_RATIO, 270*SCREEN_WIDTH_RATIO,100)];

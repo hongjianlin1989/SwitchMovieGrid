@@ -11,7 +11,6 @@
 @interface ViewController ()
 {
     NSNumber * contentHight;
-    NSString *baseUrl;
     NSInteger page;
     double FrameRate;
 }
@@ -39,9 +38,6 @@
     [self initValues];
     [self getMoviesFromUrl];
     FrameRate= SCREEN_WIDTH_RATIO;
-
-    
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 
@@ -57,8 +53,7 @@
 - (void) parseMovie:(NSDictionary *) dic
 {
     
-     NSArray *results= [dic objectForKey:@"results"];
-    
+    NSArray *results= [dic objectForKey:@"results"];
     for (NSDictionary *res in results) {
         
         Movie *movie= [[Movie alloc] init];
@@ -84,12 +79,10 @@
 
 - (void) getMoviesFromUrl
 {
-    
-    baseUrl=  @"http://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c&page=";
-    
+
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    NSString *url= [NSString stringWithFormat:@"%@%li",baseUrl,page];
+    NSString *url= [NSString stringWithFormat:@"%@%li",BASE_URL,page];
     
     [manager GET: url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
         NSDictionary * responseDic= responseObject;
@@ -99,7 +92,6 @@
              NSLog(@"Error: %@", error);} // failure callback block
     ];
     
-
 }
 
 
@@ -178,10 +170,7 @@
         
         contentHight=[NSNumber numberWithDouble:cell.movieImage.frame.size.height+10];
     }
-    
-    
-    
-    
+
     return cell;
 }
 
@@ -190,16 +179,12 @@
     NSString *selected_id=[NSString stringWithFormat:@"%ld",myView.tag];
     
     for (Movie *m in _movieArray) {
-        
         if ([m.movie_id isEqualToString:selected_id]) {
-
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             DetailViewController *detailView = [mainStoryboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
             detailView.movie=m;
             [self presentViewController:detailView animated:YES completion:nil];
-            
         }
-        
     }
     
     
@@ -209,38 +194,18 @@
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
 }
-
-//- (CGFloat)tableView:(UITableView *)tableView
-//estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSNumber *height;
-//
-//    return height.integerValue;
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    
-    NSNumber *height=contentHight;
-    
-    return height.integerValue;
+    return contentHight.integerValue;
 }
 
 
 
 - (void)scrollViewDidScroll: (UIScrollView*)scroll {
     
-    
-    if(self.tableView.contentOffset.y<-75){
-        if (_count==0) {
-        }
-        _count++;
-        //it means table view is pulled down like refresh
-        return;
-    }
-    else if(self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height-300)) {
+    if(self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height-300)) {
         if (_count==0) {
             page++;
             [self getMoviesFromUrl];
@@ -250,9 +215,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     {
         _count=0;
     }
-    
-    
-    
+
 }
 
 

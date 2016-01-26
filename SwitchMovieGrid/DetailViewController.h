@@ -16,5 +16,4 @@
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) Movie *movie;
 
-
 @end
