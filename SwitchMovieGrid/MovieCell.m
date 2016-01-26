@@ -12,8 +12,8 @@
 
 - (void)awakeFromNib {
     [[self.contentView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    _leftView = [[AsyncImageView alloc] initWithFrame:CGRectMake(10, 10, 140,200)];
-    _rightView = [[AsyncImageView alloc] initWithFrame:CGRectMake(170, 10, 140,200)];
+    _leftView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 140,200)];
+    _rightView = [[UIView alloc] initWithFrame:CGRectMake(170, 10, 140,200)];
     _leftView.frame= [[SwitchHelper sharedInstance] resizeFrameWithFrame:_leftView];
     _rightView.frame= [[SwitchHelper sharedInstance] resizeFrameWithFrame:_rightView];
     
@@ -50,17 +50,11 @@
     
     
     NSString *moviePath=_movie.poster_path;
-    
-    if ([moviePath isEqual:[NSNull null]]) {
-        moviePath=_movie.backdrop_path;
-    }
-    
     _movieImage.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://image.tmdb.org/t/p/w342",moviePath]];
     _movieImage.contentMode = UIViewContentModeScaleAspectFill;
     NSString *moviePath1=_movie1.poster_path;
-    if ([moviePath1 isEqual:[NSNull null]]) {
-        moviePath1=_movie1.backdrop_path;
-    }
+ 
+    
     [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:_movieImage1];
     _movieImage1.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://image.tmdb.org/t/p/w342",moviePath1]];
     _movieImage1.contentMode = UIViewContentModeScaleAspectFill;

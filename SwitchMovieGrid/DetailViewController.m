@@ -102,10 +102,7 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
-    
     DetailCell *cell =(DetailCell *) [tableView cellForRowAtIndexPath:indexPath];
-    
     if (indexPath.row==0) {
         if (cell == nil)
         {
@@ -116,7 +113,6 @@
             [cell builtCell];
             contentHight=[NSNumber numberWithDouble:cell.title.frame.size.height+cell.title.frame.origin.y+10];
         }
-
     }
     
      if (indexPath.row==1) {
@@ -130,7 +126,6 @@
          contentHight=[NSNumber numberWithDouble:detailLabel.frame.size.height+detailLabel.frame.origin.y+10];
          return cell;
      }
-    
     
     return cell;
 }

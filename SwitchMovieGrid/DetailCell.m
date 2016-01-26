@@ -34,9 +34,6 @@
 {
     
     NSString *moviePath=_movie.poster_path;
-    if ([moviePath isEqual:[NSNull null]]) {
-        moviePath=_movie.backdrop_path;
-    }
     _movieImage.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://image.tmdb.org/t/p/w342",moviePath]];
     _movieImage.contentMode = UIViewContentModeScaleAspectFill;
     
