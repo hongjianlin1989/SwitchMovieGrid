@@ -154,8 +154,6 @@
 				2709D7E11C5041DF001B8EAB /* ViewController.m */,
 				2709D81E1C5079B9001B8EAB /* DetailViewController.h */,
 				2709D81F1C5079B9001B8EAB /* DetailViewController.m */,
-				2709D81B1C5059B4001B8EAB /* AsyncImageView.h */,
-				2709D81C1C5059B4001B8EAB /* AsyncImageView.m */,
 				2709D8261C51107E001B8EAB /* SwitchHelper.h */,
 				2709D8271C51107E001B8EAB /* SwitchHelper.m */,
 				2709D8211C507A89001B8EAB /* DetailCell.h */,
@@ -166,8 +164,7 @@
 				2709D80F1C504637001B8EAB /* MovieCell.xib */,
 				2709D8121C504781001B8EAB /* Movie.h */,
 				2709D8131C504781001B8EAB /* Movie.m */,
-				2709D8151C50525C001B8EAB /* RTLabel.h */,
-				2709D8161C50525D001B8EAB /* RTLabel.m */,
+				275ED5D91C57D64700F89C78 /* 3rdParty */,
 				2709D8291C51393C001B8EAB /* images */,
 				2709D7E31C5041DF001B8EAB /* Main.storyboard */,
 				2709D7E61C5041DF001B8EAB /* Assets.xcassets */,
@@ -212,6 +209,17 @@
 				2709D82C1C513947001B8EAB /* whitearrow@3x.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		275ED5D91C57D64700F89C78 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				2709D81B1C5059B4001B8EAB /* AsyncImageView.h */,
+				2709D81C1C5059B4001B8EAB /* AsyncImageView.m */,
+				2709D8151C50525C001B8EAB /* RTLabel.h */,
+				2709D8161C50525D001B8EAB /* RTLabel.m */,
+			);
+			name = 3rdParty;
 			sourceTree = "<group>";
 		};
 		B6D841AAAFC1558BB85E2C37 /* Frameworks */ = {

@@ -11,16 +11,17 @@
 @implementation MovieCell
 
 - (void)awakeFromNib {
-    
+    [[self.contentView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     _leftView = [[AsyncImageView alloc] initWithFrame:CGRectMake(10, 10, 140,200)];
     _rightView = [[AsyncImageView alloc] initWithFrame:CGRectMake(170, 10, 140,200)];
-    _leftView.frame= [[SwitchHelper sharedInstance] resizeFrameWithFrame:_leftView respectToSuperFrame:nil];
-    _rightView.frame= [[SwitchHelper sharedInstance] resizeFrameWithFrame:_rightView respectToSuperFrame:nil];
+    _leftView.frame= [[SwitchHelper sharedInstance] resizeFrameWithFrame:_leftView];
+    _rightView.frame= [[SwitchHelper sharedInstance] resizeFrameWithFrame:_rightView];
     
     _leftView.clipsToBounds=YES;
     _rightView.clipsToBounds=YES;
     _leftView.backgroundColor= [UIColor lightGrayColor];
     _rightView.backgroundColor= [UIColor lightGrayColor];
+ 
     
     _movieImage = [[AsyncImageView alloc] initWithFrame:CGRectMake(0, 0, _leftView.frame.size.width,_leftView.frame.size.height)];
     _movieImage1 = [[AsyncImageView alloc] initWithFrame:CGRectMake(0, 0, _rightView.frame.size.width,_rightView.frame.size.height)];
@@ -56,17 +57,13 @@
     
     _movieImage.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://image.tmdb.org/t/p/w342",moviePath]];
     _movieImage.contentMode = UIViewContentModeScaleAspectFill;
-    
     NSString *moviePath1=_movie1.poster_path;
-    
     if ([moviePath1 isEqual:[NSNull null]]) {
         moviePath1=_movie1.backdrop_path;
     }
     [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:_movieImage1];
     _movieImage1.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://image.tmdb.org/t/p/w342",moviePath1]];
     _movieImage1.contentMode = UIViewContentModeScaleAspectFill;
-    
-    
     _leftView.tag=_movie.movie_id.intValue;
     _rightView.tag=_movie1.movie_id.intValue;
     
