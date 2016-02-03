@@ -54,7 +54,6 @@
     _leftView.tag=_movie.movie_id.intValue;
     _rightView.tag=_movie1.movie_id.intValue;
     
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

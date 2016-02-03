@@ -18,7 +18,6 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * overview;
 @property (nonatomic, retain) NSString * original_title;
-
 @property (nonatomic, retain) NSString * movie_id;
 
 @end

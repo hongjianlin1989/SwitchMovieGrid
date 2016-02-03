@@ -8,14 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "MovieCell.h"
-#import "Movie.h"
-#import "AsyncImageView.h"
-#import "RTLabel.h"
 #import "DetailViewController.h"
-#import "SwitchHelper.h"
-@interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+#import "BaseViewController.h"
+@interface ViewController : BaseViewController
 
-@property (strong, nonatomic) UITableView *tableView;
+
 @property (strong, nonatomic) NSMutableArray *movieArray;
 @property (assign, nonatomic)  int count;
 @end

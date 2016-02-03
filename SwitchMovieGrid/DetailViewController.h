@@ -7,13 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Movie.h"
 #import "DetailCell.h"
-#import "SwitchHelper.h"
-#import "RTLabel.h"
-@interface DetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+#import "BaseViewController.h"
+@interface DetailViewController : BaseViewController
 
-@property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) Movie *movie;
 
 @end

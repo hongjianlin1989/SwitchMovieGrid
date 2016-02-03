@@ -9,32 +9,15 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
-{
-       NSNumber * contentHight;
-}
+
 @end
 
 @implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.tableView = ({
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-        tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
-        tableView.delegate = self;
-        tableView.dataSource = self;
-        tableView.opaque = NO;
-        tableView.backgroundColor = [UIColor blackColor];
-        tableView.backgroundView = nil;
-        tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-        tableView.bounces = NO;
-        tableView.scrollsToTop = NO;
-        tableView;
-    });
-    [self.view addSubview:self.tableView];
- 
+    self.tableView.backgroundColor = [UIColor blackColor];
+     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     // Do any additional setup after loading the view.
 }
 
@@ -45,17 +28,9 @@
 
 #pragma mark - UITableViewDelegate
 
-- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    
-    return 50.0f*SCREEN_WIDTH_RATIO;
-}
 
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (UIView *) defineTableHeaderView:(UITableView *)tableView
 {
-    
-    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 50*SCREEN_WIDTH_RATIO)];
     [view setBackgroundColor:[UIColor whiteColor]];
     
@@ -82,24 +57,14 @@
 }
 
 
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger) defineTableNumberRowsSection
 {
-    
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section
-{
-    
     return 2;
 }
 
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell *)defineTableView:(UITableView *)tableView
+              cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     DetailCell *cell =(DetailCell *) [tableView cellForRowAtIndexPath:indexPath];
@@ -111,7 +76,7 @@
             cell.contentView.superview.backgroundColor = [UIColor clearColor];
             cell.movie=_movie;
             [cell builtCell];
-            contentHight=[NSNumber numberWithDouble:cell.title.frame.size.height+cell.title.frame.origin.y+10];
+            self.contentHight=[NSNumber numberWithDouble:cell.title.frame.size.height+cell.title.frame.origin.y+10];
         }
     }
     
@@ -123,26 +88,12 @@
          [detailLabel setText:[NSString stringWithFormat:@"<font face='Systom' size=14 color='#FFFFFF'><p>%@</p></font>",_movie.overview]];
          [detailLabel optimumSize];
          [cell.contentView addSubview:detailLabel];
-         contentHight=[NSNumber numberWithDouble:detailLabel.frame.size.height+detailLabel.frame.origin.y+10];
+        self.contentHight=[NSNumber numberWithDouble:detailLabel.frame.size.height+detailLabel.frame.origin.y+10];
          return cell;
      }
     
     return cell;
 }
-
-
-- (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    
-    return contentHight.integerValue;
-}
-
 
 - (IBAction)BackButtonClick:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

@@ -19,7 +19,6 @@
     
 }
 
-
 - (CGRect) resizeFrameWithFrame:(UIView *) view  
 {
     view.frame= CGRectMake(view.frame.origin.x * SCREEN_WIDTH_RATIO, view.frame.origin.y * SCREEN_WIDTH_RATIO, view.frame.size.width * SCREEN_WIDTH_RATIO, view.frame.size.height*SCREEN_WIDTH_RATIO);

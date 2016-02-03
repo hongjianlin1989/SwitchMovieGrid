@@ -27,6 +27,7 @@
 		2709D82D1C513947001B8EAB /* whitearrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2709D82A1C513947001B8EAB /* whitearrow.png */; };
 		2709D82E1C513947001B8EAB /* whitearrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2709D82B1C513947001B8EAB /* whitearrow@2x.png */; };
 		2709D82F1C513947001B8EAB /* whitearrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2709D82C1C513947001B8EAB /* whitearrow@3x.png */; };
+		272DF11B1C624F37007A5694 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272DF11A1C624F37007A5694 /* BaseViewController.m */; };
 		F9331C483E621A2B3AB112AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B01CEBF55E081B6D81E27B6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,8 @@
 		2709D82A1C513947001B8EAB /* whitearrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitearrow.png; sourceTree = "<group>"; };
 		2709D82B1C513947001B8EAB /* whitearrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whitearrow@2x.png"; sourceTree = "<group>"; };
 		2709D82C1C513947001B8EAB /* whitearrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whitearrow@3x.png"; sourceTree = "<group>"; };
+		272DF1191C624F37007A5694 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		272DF11A1C624F37007A5694 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		9C2433781340FC0F97F08F3E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CA65040B4AE5501C3A3262FB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +155,8 @@
 				2709D7DE1C5041DF001B8EAB /* AppDelegate.m */,
 				2709D7E01C5041DF001B8EAB /* ViewController.h */,
 				2709D7E11C5041DF001B8EAB /* ViewController.m */,
+				272DF1191C624F37007A5694 /* BaseViewController.h */,
+				272DF11A1C624F37007A5694 /* BaseViewController.m */,
 				2709D81E1C5079B9001B8EAB /* DetailViewController.h */,
 				2709D81F1C5079B9001B8EAB /* DetailViewController.m */,
 				2709D8261C51107E001B8EAB /* SwitchHelper.h */,
@@ -418,6 +423,7 @@
 			files = (
 				2709D7E21C5041DF001B8EAB /* ViewController.m in Sources */,
 				2709D7DF1C5041DF001B8EAB /* AppDelegate.m in Sources */,
+				272DF11B1C624F37007A5694 /* BaseViewController.m in Sources */,
 				2709D8191C50525D001B8EAB /* RTLabel.m in Sources */,
 				2709D8201C5079B9001B8EAB /* DetailViewController.m in Sources */,
 				2709D8101C504637001B8EAB /* MovieCell.m in Sources */,

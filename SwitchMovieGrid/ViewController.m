@@ -10,9 +10,7 @@
 #import "AFNetworking.h"
 @interface ViewController ()
 {
-    NSNumber * contentHight;
     NSInteger page;
-    double FrameRate;
 }
 @end
 
@@ -20,35 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.tableView = ({
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-        tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
-        tableView.delegate = self;
-        tableView.dataSource = self;
-        tableView.opaque = NO;
-        tableView.backgroundColor = [UIColor whiteColor];
-        tableView.backgroundView = nil;
-        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        tableView.bounces = NO;
-        tableView.scrollsToTop = NO;
-        tableView;
-    });
-    [self.view addSubview:self.tableView];
     [self initValues];
     [self getMoviesFromUrl];
-    FrameRate= SCREEN_WIDTH_RATIO;
 }
-
-
-
 
 - (void) initValues
 {
      page=1;
     _movieArray= [[NSMutableArray alloc] init];
 }
-
 
 - (void) parseMovie:(NSDictionary *) dic
 {
@@ -97,17 +75,9 @@
 
 #pragma mark - UITableViewDelegate
 
-- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+- (UIView *) defineTableHeaderView:(UITableView *)tableView
 {
-    return 45.0f*FrameRate;
-}
-
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 45*FrameRate)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 45*SCREEN_WIDTH_RATIO)];
     [view setBackgroundColor:[UIColor whiteColor]];
     
     UIFont *font= [UIFont fontWithName:@"System" size:(CGFloat)(12)];
@@ -116,62 +86,50 @@
     nameLabel.frame= [[SwitchHelper sharedInstance] resizeFrameWithFrame:nameLabel];
     nameLabel.font=font;
     nameLabel.textColor=[UIColor lightGrayColor];
-    nameLabel.text=@"Latest Movies";
+    nameLabel.text=@"Latest Movie";
     nameLabel.textAlignment=NSTextAlignmentCenter;
     
     [view addSubview:nameLabel];
     return view;
-}
-
-
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section
-{
-    
-    NSInteger count=[_movieArray count]/2;
-    count= (count%2==0)? count : count+1;
-    return count;
     
 }
 
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSInteger) defineTableNumberRowsSection
 {
+        NSInteger count=[_movieArray count]/2;
+        count= (count%2==0)? count : count+1;
+        return count;
+}
+-(UITableViewCell *)defineTableView:(UITableView *)tableView
+              cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+        MovieCell *cell =(MovieCell *) [tableView cellForRowAtIndexPath:indexPath];
     
-    MovieCell *cell =(MovieCell *) [tableView cellForRowAtIndexPath:indexPath];
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
     
-    if (cell == nil)
-    {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-        
-        cell.movie=[_movieArray objectAtIndex:indexPath.row*2];
-        cell.movie1=[_movieArray objectAtIndex:indexPath.row*2+1];
-        [cell builtCell];
-        
-        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(MovieTagClick:)];
-        tapGestureRecognizer.numberOfTapsRequired = 1;
-        [cell.leftView addGestureRecognizer:tapGestureRecognizer];
-        cell.leftView.userInteractionEnabled=YES;
-
-        UITapGestureRecognizer *tapGestureRecognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(MovieTagClick:)];
-        tapGestureRecognizer1.numberOfTapsRequired = 1;
-        [cell.rightView addGestureRecognizer:tapGestureRecognizer1];
-        cell.rightView.userInteractionEnabled=YES;
-        
-        contentHight=[NSNumber numberWithDouble:cell.movieImage.frame.size.height+10];
-    }
-
-    return cell;
+            cell.movie=[_movieArray objectAtIndex:indexPath.row*2];
+            cell.movie1=[_movieArray objectAtIndex:indexPath.row*2+1];
+            [cell builtCell];
+    
+            UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(MovieTagClick:)];
+            tapGestureRecognizer.numberOfTapsRequired = 1;
+            [cell.leftView addGestureRecognizer:tapGestureRecognizer];
+            cell.leftView.userInteractionEnabled=YES;
+    
+            UITapGestureRecognizer *tapGestureRecognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(MovieTagClick:)];
+            tapGestureRecognizer1.numberOfTapsRequired = 1;
+            [cell.rightView addGestureRecognizer:tapGestureRecognizer1];
+            cell.rightView.userInteractionEnabled=YES;
+    
+            self.contentHight=[NSNumber numberWithDouble:cell.movieImage.frame.size.height+10];
+        }
+    
+        return cell;
 }
 
 - (IBAction)MovieTagClick:(id)sender {
@@ -190,19 +148,6 @@
     
 }
 
-
-- (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    return contentHight.integerValue;
-}
-
-
-
 - (void)scrollViewDidScroll: (UIScrollView*)scroll {
     
     if(self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height-300)) {
@@ -217,7 +162,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
