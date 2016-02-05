@@ -45,11 +45,8 @@
     return self.contentHight.integerValue;
 }
 
-- (UIView *) defineTableHeaderView:(UITableView *)tableView
+- (void) customizeHeaderView:(UILabel *)titleLabel withView:(UIView *)view
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 45*SCREEN_WIDTH_RATIO)];
-    return view;
-    
 }
 
 - (NSInteger) defineTableNumberRowsSection
@@ -74,7 +71,23 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-   return  [self defineTableHeaderView:tableView];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 50*SCREEN_WIDTH_RATIO)];
+    [view setBackgroundColor:[UIColor whiteColor]];
+    
+    UIFont *font= [UIFont fontWithName:@"System" size:(CGFloat)(12)];
+    UILabel *nameLabel=[[UILabel alloc] init];
+    nameLabel.frame= CGRectMake(80, 25, 160, 21);
+    nameLabel.frame= [[SwitchHelper sharedInstance] resizeFrameWithFrame:nameLabel];
+    nameLabel.font=font;
+    nameLabel.textColor=[UIColor lightGrayColor];
+    nameLabel.text=@"Latest Movie";
+    nameLabel.textAlignment=NSTextAlignmentCenter;
+    [self customizeHeaderView:nameLabel withView:view];
+    
+    [view addSubview:nameLabel];
+    
+   return  view;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -93,7 +106,6 @@
 {
     return [self defineTableView:tableView cellForRowAtIndexPath:indexPath];
 }
-
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

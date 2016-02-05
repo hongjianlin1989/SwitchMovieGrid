@@ -73,35 +73,14 @@
 }
 
 
-#pragma mark - UITableViewDelegate
-
-- (UIView *) defineTableHeaderView:(UITableView *)tableView
-{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 45*SCREEN_WIDTH_RATIO)];
-    [view setBackgroundColor:[UIColor whiteColor]];
-    
-    UIFont *font= [UIFont fontWithName:@"System" size:(CGFloat)(12)];
-    UILabel *nameLabel=[[UILabel alloc] init];
-    nameLabel.frame= CGRectMake(80, 25, 160, 21);
-    nameLabel.frame= [[SwitchHelper sharedInstance] resizeFrameWithFrame:nameLabel];
-    nameLabel.font=font;
-    nameLabel.textColor=[UIColor lightGrayColor];
-    nameLabel.text=@"Latest Movie";
-    nameLabel.textAlignment=NSTextAlignmentCenter;
-    
-    [view addSubview:nameLabel];
-    return view;
-    
-}
-
-
-
+#pragma mark - UITableViewDelegate OverWrite
 - (NSInteger) defineTableNumberRowsSection
 {
         NSInteger count=[_movieArray count]/2;
         count= (count%2==0)? count : count+1;
         return count;
 }
+
 -(UITableViewCell *)defineTableView:(UITableView *)tableView
               cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -116,21 +95,25 @@
             cell.movie1=[_movieArray objectAtIndex:indexPath.row*2+1];
             [cell builtCell];
     
-            UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(MovieTagClick:)];
-            tapGestureRecognizer.numberOfTapsRequired = 1;
-            [cell.leftView addGestureRecognizer:tapGestureRecognizer];
-            cell.leftView.userInteractionEnabled=YES;
-    
-            UITapGestureRecognizer *tapGestureRecognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(MovieTagClick:)];
-            tapGestureRecognizer1.numberOfTapsRequired = 1;
-            [cell.rightView addGestureRecognizer:tapGestureRecognizer1];
-            cell.rightView.userInteractionEnabled=YES;
+     
+            [cell.leftView addGestureRecognizer:[self generateUITapGestureRecognizer]];
+            [cell.rightView addGestureRecognizer:[self generateUITapGestureRecognizer]];
+       
     
             self.contentHight=[NSNumber numberWithDouble:cell.movieImage.frame.size.height+10];
         }
     
         return cell;
 }
+
+- (UITapGestureRecognizer *)generateUITapGestureRecognizer
+{
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(MovieTagClick:)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    return tapGestureRecognizer;
+}
+
+
 
 - (IBAction)MovieTagClick:(id)sender {
     UIView *myView = (UIView *)[(UIGestureRecognizer *)sender view];

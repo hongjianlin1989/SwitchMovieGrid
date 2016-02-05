@@ -26,42 +26,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UITableViewDelegate
+#pragma mark - UITableViewDelegate OverWrite
 
-
-- (UIView *) defineTableHeaderView:(UITableView *)tableView
+- (void) customizeHeaderView:(UILabel *)titleLabel withView:(UIView *)view
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 50*SCREEN_WIDTH_RATIO)];
-    [view setBackgroundColor:[UIColor whiteColor]];
-    
-    
-    UIFont *font= [UIFont fontWithName:@"System" size:(CGFloat)(12)];
-    UILabel *nameLabel=[[UILabel alloc] init];
-    nameLabel.frame= CGRectMake(80, 25, 160, 21);
-    nameLabel.frame= [[SwitchHelper sharedInstance] resizeFrameWithFrame:nameLabel];
-    nameLabel.font=font;
-    nameLabel.textColor=[UIColor lightGrayColor];
-    nameLabel.text=_movie.original_title;
-    nameLabel.textAlignment=NSTextAlignmentCenter;
-    [view addSubview:nameLabel];
-    
+    titleLabel.text=_movie.original_title;
     UIButton * backButton= [[UIButton alloc] init];
     backButton.frame= CGRectMake(10, 25, 56, 21);
     backButton.frame= [[SwitchHelper sharedInstance] resizeFrameWithFrame:backButton];
-    [backButton setTitle:@"< back" forState:UIControlStateNormal];
+    [backButton setTitle:@"Back" forState:UIControlStateNormal];
     [backButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(BackButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:backButton];
-    
-    return view;
-}
 
+    
+}
 
 - (NSInteger) defineTableNumberRowsSection
 {
     return 2;
 }
-
 
 -(UITableViewCell *)defineTableView:(UITableView *)tableView
               cellForRowAtIndexPath:(NSIndexPath *)indexPath
