@@ -42,19 +42,21 @@
 
 - (void) builtCell
 {
-   
     [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:_movieImage];
-    _movieImage.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,_movie.poster_path]];
-    _movieImage.contentMode = UIViewContentModeScaleAspectFill;
-  
-    [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:_movieImage1];
-    _movieImage1.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,_movie1.poster_path]];
-    _movieImage1.contentMode = UIViewContentModeScaleAspectFill;
+    [self setImageWithUrl:_movie.poster_path InImageView:_movieImage];
+    [self setImageWithUrl:_movie1.poster_path InImageView:_movieImage1];
     
     _leftView.tag=_movie.movie_id.intValue;
     _rightView.tag=_movie1.movie_id.intValue;
     
 }
+
+- (void)setImageWithUrl:(NSString *)url InImageView:(AsyncImageView *)imageView
+{
+    imageView.imageURL =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,url]];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

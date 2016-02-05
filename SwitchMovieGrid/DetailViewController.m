@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor blackColor];
-     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     // Do any additional setup after loading the view.
 }
 
@@ -39,7 +39,6 @@
     [backButton addTarget:self action:@selector(BackButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:backButton];
 
-    
 }
 
 - (NSInteger) defineTableNumberRowsSection
@@ -64,17 +63,17 @@
         }
     }
     
-     if (indexPath.row==1) {
+    if (indexPath.row==1) {
         UITableViewCell *cell= [[UITableViewCell alloc] init];
-         cell.contentView.superview.backgroundColor = [UIColor clearColor];
-         cell.selectionStyle=UITableViewCellSelectionStyleNone;
-         RTLabel * detailLabel=[[RTLabel alloc] initWithFrame:CGRectMake(20*SCREEN_WIDTH_RATIO, 20*SCREEN_WIDTH_RATIO, 270*SCREEN_WIDTH_RATIO,100)];
-         [detailLabel setText:[NSString stringWithFormat:@"<font face='Systom' size=14 color='#FFFFFF'><p>%@</p></font>",_movie.overview]];
-         [detailLabel optimumSize];
-         [cell.contentView addSubview:detailLabel];
+        cell.contentView.superview.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+        RTLabel * detailLabel=[[RTLabel alloc] initWithFrame:CGRectMake(20*SCREEN_WIDTH_RATIO, 20*SCREEN_WIDTH_RATIO, 270*SCREEN_WIDTH_RATIO,100)];
+        [detailLabel setText:[NSString stringWithFormat:@"<font face='Systom' size=14 color='#FFFFFF'><p>%@</p></font>",_movie.overview]];
+        [detailLabel optimumSize];
+        [cell.contentView addSubview:detailLabel];
         self.contentHight=[NSNumber numberWithDouble:detailLabel.frame.size.height+detailLabel.frame.origin.y+10];
-         return cell;
-     }
+        return cell;
+    }
     
     return cell;
 }
@@ -84,13 +83,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

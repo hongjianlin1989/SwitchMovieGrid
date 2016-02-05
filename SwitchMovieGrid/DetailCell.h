@@ -19,11 +19,8 @@
 @property (nonatomic, retain) UIView *leftView;
 
 @property (nonatomic, retain) RTLabel *ScoreLabel;
-@property (nonatomic, retain) RTLabel *Score;
 @property (nonatomic, retain) RTLabel *RatingLabel;
-@property (nonatomic, retain) RTLabel *Rating;
 @property (nonatomic, retain) RTLabel *ReleaseDayLabel;
-@property (nonatomic, retain) RTLabel *ReleaseDay;
 
 @property (nonatomic, retain) RTLabel *title;
 

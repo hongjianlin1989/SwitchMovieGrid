@@ -24,7 +24,7 @@
 
 - (void) initValues
 {
-     page=1;
+    page=1;
     _movieArray= [[NSMutableArray alloc] init];
 }
 
@@ -57,7 +57,7 @@
 
 - (void) getMoviesFromUrl
 {
-
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     NSString *url= [NSString stringWithFormat:@"%@%li",BASE_URL,page];
@@ -68,7 +68,7 @@
     } // success callback block
          failure:^(AFHTTPRequestOperation *operation, NSError *error){
              NSLog(@"Error: %@", error);} // failure callback block
-    ];
+     ];
     
 }
 
@@ -76,34 +76,31 @@
 #pragma mark - UITableViewDelegate OverWrite
 - (NSInteger) defineTableNumberRowsSection
 {
-        NSInteger count=[_movieArray count]/2;
-        count= (count%2==0)? count : count+1;
-        return count;
+    NSInteger count=[_movieArray count]/2;
+    count= (count%2==0)? count : count+1;
+    return count;
 }
 
 -(UITableViewCell *)defineTableView:(UITableView *)tableView
               cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        MovieCell *cell =(MovieCell *) [tableView cellForRowAtIndexPath:indexPath];
+    MovieCell *cell =(MovieCell *) [tableView cellForRowAtIndexPath:indexPath];
     
-        if (cell == nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+        
+        cell.movie=[_movieArray objectAtIndex:indexPath.row*2];
+        cell.movie1=[_movieArray objectAtIndex:indexPath.row*2+1];
+        [cell builtCell];
+        [cell.leftView addGestureRecognizer:[self generateUITapGestureRecognizer]];
+        [cell.rightView addGestureRecognizer:[self generateUITapGestureRecognizer]];
+        
+        self.contentHight=[NSNumber numberWithDouble:cell.movieImage.frame.size.height+10];
+    }
     
-            cell.movie=[_movieArray objectAtIndex:indexPath.row*2];
-            cell.movie1=[_movieArray objectAtIndex:indexPath.row*2+1];
-            [cell builtCell];
-    
-     
-            [cell.leftView addGestureRecognizer:[self generateUITapGestureRecognizer]];
-            [cell.rightView addGestureRecognizer:[self generateUITapGestureRecognizer]];
-       
-    
-            self.contentHight=[NSNumber numberWithDouble:cell.movieImage.frame.size.height+10];
-        }
-    
-        return cell;
+    return cell;
 }
 
 - (UITapGestureRecognizer *)generateUITapGestureRecognizer
@@ -112,7 +109,6 @@
     tapGestureRecognizer.numberOfTapsRequired = 1;
     return tapGestureRecognizer;
 }
-
 
 
 - (IBAction)MovieTagClick:(id)sender {
@@ -127,8 +123,6 @@
             [self presentViewController:detailView animated:YES completion:nil];
         }
     }
-    
-    
 }
 
 - (void)scrollViewDidScroll: (UIScrollView*)scroll {
@@ -143,7 +137,7 @@
     {
         _count=0;
     }
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
